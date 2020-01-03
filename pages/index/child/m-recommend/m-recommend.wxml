@@ -1,0 +1,14 @@
+<!--pages/index/child/m-recommend/m-recommend.wxml-->
+<view class="m-recommends">
+  <block wx:for='{{recommends}}'  wx:key='index'>
+    <view class="item" data-index='{{index}}' bindtap="goTolink">
+      <view>
+        <image src="{{item.image}}" mode="widthFix" class="item-image"></image>
+      </view>
+      <view class="text">
+        {{item.title}}
+      </view>
+    </view>
+  </block>
+</view>
+

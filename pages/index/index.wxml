@@ -1,2 +1,5 @@
 <!--pages/index.wxml-->
-<text>pages/index.wxml</text>
+<!-- 轮播图 -->
+<m-swiper list = '{{banners}}' />
+<!-- 推荐 -->
+<m-recommend recommends='{{recommends}}' />
