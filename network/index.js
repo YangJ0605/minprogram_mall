@@ -1,0 +1,12 @@
+import request from './network.js'
+const baseURL = 'http://106.54.54.237:8000/api/w1'
+
+function getHomeData(){
+  return request({
+    url:baseURL + '/home/multidata'
+  })
+}
+
+export {
+  getHomeData
+}

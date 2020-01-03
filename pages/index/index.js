@@ -1,18 +1,33 @@
 // pages/index.js
+import {getHomeData} from '../../network/index'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    banners: [],
+    recommends: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    getHomeData().then(res => {
+      // console.log(res)
+      if(res.statusCode === 200){
+        const banners = res.data.data.banner.list
+        const recommends = res.data.data.recommend.list
+        this.setData({
+          banners:banners,
+          recommends:recommends
+        })
+      }
+    }).catch(err => {
+      console.log(err)
+    })          
   },
 
   /**
