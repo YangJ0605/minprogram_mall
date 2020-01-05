@@ -1,0 +1,36 @@
+/* components/m-goods-item/m-goods-item.wxss */
+.goods-item {
+  text-align: center;
+  color: #333;
+}
+.goods-item .image {
+  width: 100%;
+  height: 480rpx;
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius: 10rpx;
+}
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+}
+.info {
+  font-size: 26rpx;
+}
+.info .price {
+  color: #ff5777;
+  /* padding-right: 10rpx; */
+}
+.icon {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  background-repeat:no-repeat;
+  background-size:cover;
+  margin:0 2rpx 0 6rpx;
+  position: relative;
+  top:5rpx;
+}

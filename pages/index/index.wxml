@@ -10,9 +10,6 @@
 <!-- goods -->
 <view class="m-goods">
   <block wx:for='{{goods[currentType].list}}' wx:key='index'>
-    <view class="goods-item">
-      <view style="background: url('{{item.show.img}}')" class="item-image"></view>
-      <view class="text">{{item.title}}</view>
-    </view>
+     <m-goods-item item = '{{item}}' class='item' />
   </block>
 </view>

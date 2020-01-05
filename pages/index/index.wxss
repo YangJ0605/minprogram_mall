@@ -2,12 +2,9 @@
 .m-goods {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-.m-goods .goods-item {
+.m-goods .item {
   width: 48%;
-}
-.item-image {
-  height: 250rpx;
-  height: 250rpx;
-  background-size: cover;
+  position: relative;
 }
