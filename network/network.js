@@ -5,7 +5,6 @@ function request (options){
       method:options.method || 'get',
       data:options.data || {},
       header:options.header,
-      timeout:options.timeout || 3000,
       success:resolve,
       fail:reject
     })

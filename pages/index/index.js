@@ -1,5 +1,8 @@
 // pages/index.js
-import {getHomeData} from '../../network/index'
+import {
+  getHomeData,
+  getGoodsData
+} from '../../network/index'
 
 Page({
 
@@ -8,13 +11,50 @@ Page({
    */
   data: {
     banners: [],
-    recommends: []
+    recommends: [],
+    titles:['流行', '新款', '精选'],
+    goods:{
+      pop:{page:1,list:[]},
+      new:{page:1,list:[]},
+      sell:{page:1,list:[]}
+    },
+    currentType:'pop',
+    currentTypeList:['pop','new','sell']
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this._getHomeData()
+    this._getGoodsData('pop')
+    this._getGoodsData('new')
+    this._getGoodsData('sell')
+  },
+  //获取goods数据
+  _getGoodsData(type){
+    // console.log(this.data.goods[type].page)
+    const page = this.data.goods[type].page
+    getGoodsData(type,page).then(res => {
+      const list = res.data.data.list
+      const oldList = this.data.goods[type].list
+      oldList.push(...list)
+      const listKey = `goods.${type}.list`
+      const pageKey = `goods.${type}.page`
+      // const goods = this.data.goods
+      // goods[type].list.push(...list)
+      // goods[type].page += 1
+      this.setData({
+        [listKey]:oldList,
+        [pageKey]:this.data.goods[type].page + 1
+        // goods:goods
+      })
+      // console.log(this.data.goods[type].page)
+    })
+
+  },
+  // 获取轮播图与推荐
+  _getHomeData(){
     getHomeData().then(res => {
       // console.log(res)
       if(res.statusCode === 200){
@@ -27,50 +67,15 @@ Page({
       }
     }).catch(err => {
       console.log(err)
-    })          
+    })         
+  },
+  tabClick(e){
+    const index = e.detail.index
+    this.setData({
+      currentType:this.data.currentTypeList[index]
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
 
   /**
    * 用户点击右上角分享

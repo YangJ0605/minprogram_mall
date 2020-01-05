@@ -1,1 +1,13 @@
 /* pages/index.wxss */
+.m-goods {
+  display: flex;
+  flex-wrap: wrap;
+}
+.m-goods .goods-item {
+  width: 48%;
+}
+.item-image {
+  height: 250rpx;
+  height: 250rpx;
+  background-size: cover;
+}

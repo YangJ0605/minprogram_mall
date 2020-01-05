@@ -8,6 +8,13 @@ function getHomeData(){
   })
 }
 
+function getGoodsData(type,page){
+  return request({
+    url:baseURL + `/home/data?type=${type}&page=${page}`
+  })
+}
+
 export {
-  getHomeData
+  getHomeData,
+  getGoodsData
 }

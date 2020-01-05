@@ -1,0 +1,19 @@
+/* components/m-tab-control/m-tab-control.wxss */
+.m-tab-control {
+  display: flex;
+  margin-bottom: 16rpx;
+}
+
+.item {
+  flex: 1;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+}
+
+.item.active .text {
+  padding: 16rpx 10rpx;
+  color: #ff5777;
+  border-bottom: 6rpx solid #ff5777;
+}
