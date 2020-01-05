@@ -19,7 +19,10 @@ Page({
       sell:{page:1,list:[]}
     },
     currentType:'pop',
-    currentTypeList:['pop','new','sell']
+    currentTypeList:['pop','new','sell'],
+    isShowBackTop:false,
+    isFixed: false,
+    tabScrollTop:0
   },
 
   /**
@@ -30,6 +33,22 @@ Page({
     this._getGoodsData('pop')
     this._getGoodsData('new')
     this._getGoodsData('sell')
+  },
+  onShow(){
+    // wx.createSelectorQuery().select('#tab-control').boundingClientRect(rect => {
+    //   setTimeout(() => {
+    //     console.log(rect)
+    //   }, 1000);
+    //   console.log(rect)
+    //   this.data.tabScrollTop = rect.top
+    // }).exec()
+  },
+  //监听网络图片加载完成
+  IndeximageLoad(){
+    wx.createSelectorQuery().select('#tab-control').boundingClientRect(rect => {
+      this.data.tabScrollTop = rect.top
+      // console.log(rect.top)
+    }).exec()
   },
   //获取goods数据
   _getGoodsData(type){
@@ -75,8 +94,35 @@ Page({
       currentType:this.data.currentTypeList[index]
     })
   },
-
-
+  //页面滚动到底部触发的事件
+  onReachBottom(){
+    new Promise((resolve) => {
+      resolve()
+      this._getGoodsData(this.data.currentType)
+    }).then(() => {
+      wx.showToast({
+        icon:'loading',
+        duration:1000
+      })
+    })
+  },
+  //监听页面滚动
+  onPageScroll(e){
+    const backTop = 444
+    const flag = e.scrollTop > backTop
+    if(flag !== this.data.isShowBackTop){
+      this.setData({
+        isShowBackTop:flag
+      })
+    }
+    //是否让tab fixed
+    const flag2 = e.scrollTop > this.data.tabScrollTop
+    if(flag2 !== this.data.isFixed){
+      this.setData({
+        isFixed:flag2
+      })
+    }
+  },
   /**
    * 用户点击右上角分享
    */

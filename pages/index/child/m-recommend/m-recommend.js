@@ -14,7 +14,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    isImageload:false
   },
 
   /**
@@ -32,6 +32,12 @@ Component({
           console.log(err)
         }
       })
+    },
+    handleImageLoad(){
+      if(!this.data.isImageload){
+        this.triggerEvent('IndeximageLoad',{name:'xx'})
+        this.data.isImageload = true
+      }
     }
   }
 })
