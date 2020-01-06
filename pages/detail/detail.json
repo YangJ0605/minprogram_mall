@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "m-swiper":"/components/m-swiper/m-swiper",
+    "m-titles-info":"./child/m-titles-info/m-titiles-info"
+  }
+}

@@ -102,7 +102,8 @@ Page({
     }).then(() => {
       wx.showToast({
         icon:'loading',
-        duration:1000
+        duration:1000,
+        mask:true
       })
     })
   },

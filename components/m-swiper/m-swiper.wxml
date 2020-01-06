@@ -1,5 +1,5 @@
 <!--components/m-swiper/m-swiper.wxml-->
-<swiper class="m-swiper"
+<swiper class="m-swiper height"
         indicator-dots
         indicator-active-color='#ff5777'
         autoplay
@@ -8,7 +8,7 @@
 >
   <block wx:for='{{list}}' wx:key='index'>
     <swiper-item>
-      <image src='{{item.image}}' mode='widthFix' class="swiper-image"></image>
+      <image src='{{item.image || item}}' mode='widthFix' class="swiper-image"></image>
     </swiper-item>
   </block>
 </swiper>

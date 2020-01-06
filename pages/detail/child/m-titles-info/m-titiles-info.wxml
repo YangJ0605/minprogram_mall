@@ -1,0 +1,29 @@
+<!--pages/detail/child/m-titles-info/m-titiles-info.wxml-->
+
+<view class="titles-info" bindtap="test">
+ <view class="title">{{content.title}}</view>
+ <view class="price-info">
+  <text class="new-price">{{content.newPrice}}</text>
+  <text class="old-price">{{content.oldPrice}}</text>
+  <text class="discount"
+        style="background:{{content.discountBgColor}}"
+  >{{content.discount}}</text>
+ </view>
+ <view class="sell-info">
+  <view class="sell-item">{{content.columns[0]}}</view>
+  <view class="sell-item">{{content.columns[1]}}</view>
+  <view class="sell-item">{{content.columns[2]}}:申通</view>
+  <view class="sell-item" wx:if='{{content.columns[3]}}'>发货地:{{content.columns[3]}}</view>
+ </view>
+ <view class="service">
+  <block wx:for='{{content.services}}' wx:key='index'>
+   <!-- 隐藏延误 -->
+    <block wx:if='{{index != 0}}'>
+      <view class="service-item">
+        <image class='icon' src="{{item.icon}}"/>
+        <text class='name'>{{item.name}}</text>
+      </view>
+    </block>
+  </block>
+ </view>
+</view>

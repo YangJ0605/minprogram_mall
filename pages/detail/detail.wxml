@@ -1,0 +1,6 @@
+<!--pages/detail/detail.wxml-->
+<scroll-view class="detail"
+             scroll-y>
+  <m-swiper list='{{swiperImages}}' height='height' />
+  <m-titles-info content="{{titlesInfo}}" />
+</scroll-view>

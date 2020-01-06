@@ -10,6 +10,7 @@ Component({
     }
   },
 
+  externalClasses:['height'],
   /**
    * 组件的初始数据
    */
