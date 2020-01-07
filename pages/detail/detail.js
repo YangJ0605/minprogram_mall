@@ -17,7 +17,9 @@ Page({
     shopInfo:{},
     detailInfo:{},
     paramInfo:{},
-    commentsInfo:{}
+    commentsInfo:{},
+    isShowBackTop:false,
+    scrollTop:''
   },
 
   /**
@@ -69,6 +71,19 @@ Page({
         console.log(err)
       })
     
+  },
+  scroll(e){
+    let flag = e.detail.scrollTop > 444
+    if(flag != this.data.isShowBackTop){
+      this.setData({
+        isShowBackTop:flag
+      })
+    }
+  },
+  backtop(){
+    this.setData({
+      scrollTop:0
+    })
   },
   onReachBottom: function () {
     

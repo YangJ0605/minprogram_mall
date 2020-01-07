@@ -1,4 +1,7 @@
 /* pages/detail/detail.wxss */
+.detail {
+  height: 100%;
+}
 .height {
   height: 800rpx!important;
 }

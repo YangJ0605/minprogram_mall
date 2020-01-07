@@ -19,6 +19,7 @@ Component({
    */
   methods: {
     backTop(){
+      console.log('backtop')
       wx.pageScrollTo({
         scrollTop: 0,
         duration: 300

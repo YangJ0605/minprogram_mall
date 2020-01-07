@@ -14,7 +14,7 @@
   </view>
   <view class='other-info'>
 
-    <view class='time'>{{form.dateFormat(commentsInfo.created,'yyyy/MM/dd')}}-{{form.dateFormat('1537578367970')}}</view>
+    <view class='time'>{{form.dateFormat(commentsInfo.created,'yyyy-MM-dd')}}</view>
     <view class='style'>{{commentsInfo.style}}</view>
   </view>
   <view class='picture'>
