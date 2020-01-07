@@ -1,8 +1,9 @@
 // pages/detail/detail.js
 import {
   getDetailData,
-
-  TitlesInfo
+  ShopInfo,
+  TitlesInfo,
+  ParamInfo
 } from '../../network/detail.js'
 Page({
 
@@ -12,7 +13,11 @@ Page({
   data: {
     iid:'',
     swiperImages: [],
-    titlesInfo:{}
+    titlesInfo:{},
+    shopInfo:{},
+    detailInfo:{},
+    paramInfo:{},
+    commentsInfo:{}
   },
 
   /**
@@ -37,11 +42,26 @@ Page({
           const titlesInfo = new TitlesInfo(data.itemInfo, data.columns, data.shopInfo.services)
           //加入地址
           titlesInfo.columns.push(titlesInfo.extra.sendAddress)
-
-          console.log(titlesInfo)
+          //取出商户信息
+          const shopInfo = new ShopInfo(data.shopInfo)
+          // console.log(shopInfo)
+          //取出商品细节展示
+          const detailInfo = data.detailInfo
+          // console.log(detailInfo)
+          //商品参数
+          const paramInfo = new ParamInfo(data.itemParams.info, data.itemParams.rule)
+          //获取评论信息
+          let commentsInfo = {}
+          if(data.rate && data.rate.list){
+            commentsInfo = data.rate.list[0]
+          }
           this.setData({
             swiperImages: swiperImages,
-            titlesInfo:titlesInfo
+            titlesInfo:titlesInfo,
+            shopInfo:shopInfo,
+            detailInfo:detailInfo,
+            paramInfo:paramInfo,
+            commentsInfo: commentsInfo
           })
         }
       })

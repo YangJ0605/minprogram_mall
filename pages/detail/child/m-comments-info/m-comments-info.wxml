@@ -1,0 +1,27 @@
+<!--pages/detail/child/m-comments-info/m-comments-info.wxml-->
+<wxs src='../../../../wxs/form.wxs' module='form'/>
+<view class='m-comments-info'>
+  <view class='header'>
+    <view>用户评价</view>
+    <view>更多 >></view>
+  </view>
+  <view class='user'>
+    <image src="{{commentsInfo.user.avatar}}"/>
+    <text>{{commentsInfo.user.uname}}</text>
+  </view>
+  <view class='comment'>
+    {{commentsInfo.content}}
+  </view>
+  <view class='other-info'>
+
+    <view class='time'>{{form.dateFormat(commentsInfo.created,'yyyy/MM/dd')}}-{{form.dateFormat('1537578367970')}}</view>
+    <view class='style'>{{commentsInfo.style}}</view>
+  </view>
+  <view class='picture'>
+    <block wx:for="{{commentsInfo.images}}" 
+           wx:key="index">
+      <image src="{{item}}" mode="widthFix"/>
+    </block>
+  </view>
+</view>
+

@@ -1,6 +1,10 @@
 {
   "usingComponents": {
     "m-swiper":"/components/m-swiper/m-swiper",
-    "m-titles-info":"./child/m-titles-info/m-titiles-info"
+    "m-titles-info":"./child/m-titles-info/m-titiles-info",
+    "m-shop-info":"./child/m-shop-info/m-shop-info",
+    "m-detail-info":"./child/m-detail-info/m-detail-info",
+    "m-param-info": "./child/m-param-info/m-param-info",
+    "m-comments-info":"./child/m-comments-info/m-comments-info"
   }
 }

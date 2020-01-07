@@ -96,16 +96,7 @@ Page({
   },
   //页面滚动到底部触发的事件
   onReachBottom(){
-    new Promise((resolve) => {
-      resolve()
-      this._getGoodsData(this.data.currentType)
-    }).then(() => {
-      wx.showToast({
-        icon:'loading',
-        duration:1000,
-        mask:true
-      })
-    })
+    this._getGoodsData(this.data.currentType)
   },
   //监听页面滚动
   onPageScroll(e){
