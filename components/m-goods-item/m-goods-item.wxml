@@ -1,6 +1,6 @@
 <!--components/m-goods-item/m-goods-item.wxml-->
 <view class="goods-item" bind:tap='goToDetail'>
-    <view class="image" style="background-image: url('{{item.show.img}}')"></view>
+    <view class="image" style="background-image: url('{{item.img ||item.show.img}}')"></view>
     <view class="desc-info ">
         <view class="title">{{item.title}}</view>
         <view class="info">

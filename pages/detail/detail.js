@@ -1,6 +1,8 @@
 // pages/detail/detail.js
 import {
   getDetailData,
+  // getRecommend,
+  getReal,
   ShopInfo,
   TitlesInfo,
   ParamInfo
@@ -19,7 +21,10 @@ Page({
     paramInfo:{},
     commentsInfo:{},
     isShowBackTop:false,
-    scrollTop:''
+    scrollTop:'',
+    test:'test',
+    recommend:[],
+    isShowDetail:true
   },
 
   /**
@@ -30,11 +35,42 @@ Page({
       iid:options.iid
     })
     this._getDetailData()
+    this._getRecommend()
   },
-
+  //获取推荐数据
+  _getRecommend(){
+    // getRecommend().then(res => {
+    //   // console.log(res)
+    //   const recommend1 = res.data.data.list.splice(0,10)
+     
+    //   this.setData({
+    //     // recommend:recommend
+    //   })
+    // })
+    // .catch(err => {
+    //   console.log(err)
+    // })
+    getReal().then(res => {
+      // console.log('real', res)
+      const recommend = res.data.splice(0,10)
+      // console.log(recommend)
+      this.setData({
+        recommend:recommend
+      })
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+  //获取详情数据
   _getDetailData(){
     getDetailData(this.data.iid)
       .then(res => {
+        if(res.statusCode === 500){
+          this.setData({
+            isShowDetail:false
+          })
+        }
         if(res.statusCode === 200){
           const data = res.data.result
           // console.log(data)

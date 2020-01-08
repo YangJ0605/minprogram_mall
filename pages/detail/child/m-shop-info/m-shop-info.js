@@ -7,6 +7,9 @@ Component({
     shopInfo:{
       type:Object,
       value:{}
+    },
+    test:{
+      type:String
     }
   },
 
@@ -18,7 +21,10 @@ Component({
   },
   lifetimes:{
     ready(){
-      console.log(this.properties.shopInfo)
+      // console.log(this)
+      // console.log(this.properties)
+      // console.log(this.properties.test)
+      // console.log(this.properties.shopInfo)
     }
   },
   // pageLifetimes:{

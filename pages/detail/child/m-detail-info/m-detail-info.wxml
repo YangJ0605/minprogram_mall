@@ -15,7 +15,7 @@
              wx:for-item="innerItem" 
              wx:for-index="innerIndex"
              wx:key="innerIndex">
-        <image src="{{innerItem}}" mode='widthFix'/>
+        <image src="{{innerItem}}" mode='widthFix' class="detail-image"/>
       </block>
     </block>
   </view>

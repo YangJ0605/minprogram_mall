@@ -1,0 +1,6 @@
+<!--pages/detail/child/m-recommends/m-recommends.wxml-->
+<view class="m-recommend">
+  <block wx:for='{{recommend}}' wx:key='index' wx:for-item='goodsItem'>
+    <m-goods-item item='{{goodsItem}}' class='item' />
+  </block>
+</view>

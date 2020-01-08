@@ -16,14 +16,14 @@
   margin: 30rpx 0;
 }
 
-.user image {
+.user .user-image {
   width: 84rpx;
   height: 84rpx;
   vertical-align: middle;
   border-radius: 42rpx;
 } 
 
-.user text {
+.user .user-text {
   vertical-align: middle;
   margin-left: 16rpx;
   font-size: 32rpx;
@@ -53,7 +53,7 @@
   margin-top: 20rpx;
 }
 
-.picture image {
+.picture .picture-image {
   max-width: 30%;
 }
 

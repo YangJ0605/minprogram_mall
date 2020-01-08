@@ -7,14 +7,14 @@
   margin-top: 30rpx;
 }
 
-.title-info image {
+.title-info .image {
   width: 90rpx;
   height: 90rpx;
   border-radius: 46rpx;
   border: 1px solid rgba(200,200,200,.6);
   vertical-align: middle;
 }
-.title-info text {
+.title-info .text {
   margin-left: 18rpx;
   position: relative;
   top: 6rpx;
@@ -23,11 +23,11 @@
   text-align: center;
 }
 
-.entrance button::after {
+.entrance .button::after {
   border: none;
 }
 
-.entrance button {
+.entrance .button {
   padding: 8rpx 100rpx;
 }
 

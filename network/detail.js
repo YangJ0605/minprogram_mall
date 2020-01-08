@@ -1,6 +1,14 @@
 import request from './network.js'
 const baseURL = 'http://123.207.32.32:8000/api/w1'
 
+//两种数据结合
+const maitKeyArr = [10062603, 50003, 50004, 51716]
+const typeArr = ['sell', 'new', 'pop']
+let mindex = Math.floor(Math.random() * 4)
+let tindex = Math.floor(Math.random() * 3)
+const type = typeArr[tindex]
+const miniWallkey = maitKeyArr[mindex]
+
 export function getDetailData(iid){
   return request({
     url: baseURL + '/detail',
@@ -10,6 +18,26 @@ export function getDetailData(iid){
   })
 }
 
+export function getRecommend(){
+  // return request({
+  //   url: baseURL + '/subcategory',
+  //   data:{
+  //     maitKey
+  //   }
+  // })
+  return request({
+    url: baseURL + '/recommend'
+  })
+}
+export function getReal(){
+  return request({
+    url: baseURL + '/subcategory/detail',
+    data: {
+      miniWallkey,
+      type
+    }
+  })
+}
 
 export class TitlesInfo {
   constructor(itemInfo, columns, services){
@@ -43,6 +71,6 @@ export class ParamInfo {
     // 注: images可能没有值(某些商品有值, 某些没有值)
     this.image = info.images ? info.images[0] : '';
     this.infos = info.set;
-    this.sizes = rule.tables;
+    this.sizes = rule.tables ? rule.tables : []
   }
 }

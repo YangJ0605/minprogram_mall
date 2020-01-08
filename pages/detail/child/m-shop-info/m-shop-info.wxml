@@ -2,8 +2,8 @@
 <wxs src='../../../../wxs/form.wxs' module='form'/>
 <view class="m-shop-info">
   <view class="title-info">
-    <image src="{{shopInfo.logo}}"></image>
-    <text>{{shopInfo.name}}</text>
+    <image src="{{shopInfo.logo}}" class="image"></image>
+    <text class="text">{{shopInfo.name}}</text>
   </view>
   <view class="sell-info">
     <view class='count-info sell-item'>
@@ -27,6 +27,6 @@
     </view>
   </view>
   <view class='entrance'>
-    <button size='mini'>进店逛逛</button>
+    <button size='mini' class="button">进店逛逛</button>
   </view>
 </view>

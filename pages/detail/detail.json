@@ -6,6 +6,7 @@
     "m-detail-info":"./child/m-detail-info/m-detail-info",
     "m-param-info": "./child/m-param-info/m-param-info",
     "m-comments-info":"./child/m-comments-info/m-comments-info",
+    "m-recommends":"./child/m-recommends/m-recommends",
     "m-back-top":"/components/m-back-top/m-back-top"
   }
 }

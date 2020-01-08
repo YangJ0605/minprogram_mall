@@ -3,11 +3,19 @@
              scroll-y='{{true}}'
              bindscroll="scroll"
              scroll-top='{{scrollTop}}'>
-  <m-swiper list='{{swiperImages}}' height='height' />
-  <m-titles-info content="{{titlesInfo}}" />
-  <m-shop-info shopInfo = "{{shopInfo}}"/>
-  <m-detail-info detailInfo='{{detailInfo}}' />
-  <m-param-info paramInfo='{{paramInfo}}' />
-  <m-comments-info commentsInfo='{{commentsInfo}}' />
+
+  <view wx:if='{{isShowDetail}}'>
+    <m-swiper list='{{swiperImages}}' height='height' />
+    <m-titles-info content="{{titlesInfo}}" />
+    <m-shop-info shopInfo = "{{shopInfo}}" test='{{test}}' />
+    <m-detail-info detailInfo='{{detailInfo}}' />
+    <m-param-info paramInfo='{{paramInfo}}' />
+    <m-comments-info commentsInfo='{{commentsInfo}}' />
+  </view>
+  <view wx:else class="else">
+    <image src="/assets/sorry.png" class="sorry-image"></image>
+    <text class="text">抱歉～该商品已经下线，请浏览其他商品</text>
+  </view>
+  <m-recommends recommend = '{{recommend}}'/>
 </scroll-view>
 <m-back-top wx:if='{{isShowBackTop}}' bindtap='backtop'/>

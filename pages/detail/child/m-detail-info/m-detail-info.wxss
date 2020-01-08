@@ -45,6 +45,6 @@
   font-size: 40rpx;
 }
 
-.content image {
+.content .detail-image {
   width: 100%;
 }

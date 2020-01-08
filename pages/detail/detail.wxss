@@ -5,3 +5,18 @@
 .height {
   height: 800rpx!important;
 }
+.else {
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sorry-image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 10rpx;
+}
+.else .text {
+  font-size: 30rpx;
+}

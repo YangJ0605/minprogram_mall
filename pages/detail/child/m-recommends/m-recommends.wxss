@@ -1,0 +1,10 @@
+/* pages/detail/child/m-recommends/m-recommends.wxss */
+.m-recommend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.m-recommend .item {
+  width: 48%;
+  position: relative;
+}
