@@ -1,4 +1,4 @@
 <!--components/m-back-top/m-back-top.wxml-->
-<view class="back-top" bindtap="backTop">
+<view class="back-top detail-back-top" bindtap="backTop">
   <image src="/assets/back-top.png" class="back-top-image"></image>
 </view>

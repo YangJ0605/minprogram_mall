@@ -1,9 +1,13 @@
 /* pages/detail/detail.wxss */
 .detail {
-  height: 100%;
+  height: calc(100% - 120rpx);
 }
 .height {
   height: 800rpx!important;
+}
+.detail-back-top {
+  /* position: fixed; */
+  bottom: 120rpx !important;
 }
 .else {
   width: 100%;

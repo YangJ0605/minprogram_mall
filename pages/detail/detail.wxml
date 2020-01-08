@@ -17,5 +17,6 @@
     <text class="text">抱歉～该商品已经下线，请浏览其他商品</text>
   </view>
   <m-recommends recommend = '{{recommend}}'/>
+  <m-back-top wx:if='{{isShowBackTop}}' bindtap='backtop' detail-back-top = 'detail-back-top'/>
 </scroll-view>
-<m-back-top wx:if='{{isShowBackTop}}' bindtap='backtop'/>
+<m-bottom-tabbar />

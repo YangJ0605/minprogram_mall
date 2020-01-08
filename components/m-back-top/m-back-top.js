@@ -6,7 +6,7 @@ Component({
   properties: {
 
   },
-
+  externalClasses:['detail-back-top'],
   /**
    * 组件的初始数据
    */
