@@ -1,1 +1,30 @@
 /* pages/cart/cart.wxss */
+.m-cart {
+  height: calc(100vh - 80rpx);
+}
+.bottom-bar {
+  display: flex;
+  background-color: #e6e6e6;
+  height: 80rpx;
+  /* justify-content: center; */
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+}
+.price {
+  font-weight: 700;
+  color: black;
+}
+.right {
+  top: 9rpx;
+  position: absolute;
+  right: 8rpx;
+}
+.right .button {
+  border-radius: 50rpx;
+  background-color: red;
+  color: white;
+}

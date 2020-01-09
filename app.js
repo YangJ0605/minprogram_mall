@@ -1,5 +1,17 @@
 App({
-
+    globalData:{
+      cartList:[]
+    },
+    addToCart(obj){
+      // const oldShop = this.globalData.cartList.some(ele => ele.iid === obj,iid)
+      const oldShop = this.globalData.cartList.find(ele => ele.iid === obj.iid)
+      if(oldShop){
+        oldShop.count +=1
+      }else {
+        obj.count = 1
+        this.globalData.cartList.push(obj)
+      }
+    },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */

@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "m-check-button":"/components/m-check-button/m-check-button"
+  }
 }

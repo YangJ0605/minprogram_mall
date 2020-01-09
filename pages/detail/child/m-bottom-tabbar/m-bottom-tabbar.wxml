@@ -22,7 +22,7 @@
       </block>
   </view>
   <view class='bar-right bar-item'>
-    <view class='right-item cart'>加入购物车</view>
+    <view class='right-item cart' bindtap="addCart">加入购物车</view>
     <view class='right-item buy'>购买</view>
   </view>
 </view>

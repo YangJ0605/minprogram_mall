@@ -7,6 +7,12 @@ import {
   TitlesInfo,
   ParamInfo
 } from '../../network/detail.js'
+
+import {
+    throttle
+} from '../../utils/util'
+const app = getApp()
+
 Page({
 
   /**
@@ -120,6 +126,26 @@ Page({
     this.setData({
       scrollTop:0
     })
+  },
+  handleAddCart(){
+    // console.log('加入成功')
+    const obj = {}
+    obj.iid = this.data.iid
+    obj.imageURL = this.data.swiperImages[0]
+    obj.title = this.data.shopInfo.title
+    obj.desc = this.data.shopInfo.desc
+    obj.price = this.data.shopInfo.realPrice
+
+    throttle(() => {
+      console.log('cc')
+      app.addToCart(obj)
+      wx.showToast({
+        title: '加入购物车成功',
+        icon:'success',
+        duration:800
+      })
+    },500)
+   
   },
   onReachBottom: function () {
     

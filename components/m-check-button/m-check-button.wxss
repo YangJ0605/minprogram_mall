@@ -1,0 +1,12 @@
+/* components/m-checkd-button/m-check-button.wxss */
+.m-check-button {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+.image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}

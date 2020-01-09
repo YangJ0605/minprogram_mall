@@ -19,4 +19,4 @@
   <m-recommends recommend = '{{recommend}}'/>
   <m-back-top wx:if='{{isShowBackTop}}' bindtap='backtop' detail-back-top = 'detail-back-top'/>
 </scroll-view>
-<m-bottom-tabbar />
+<m-bottom-tabbar bind:addCart="handleAddCart"/>

@@ -29,6 +29,9 @@ Component({
       this.setData({
         [key]: !this.data.images[type].clicked
       })
-    }
+    },
+    addCart(){
+      this.triggerEvent('addCart',{},{})
+    } 
   }
 })
