@@ -1,4 +1,5 @@
 <!--pages/detail/detail.wxml-->
+<!-- <wxs src='../../wxs/form.wxs' module='throttle' /> -->
 <scroll-view class="detail"
              scroll-y='{{true}}'
              bindscroll="scroll"

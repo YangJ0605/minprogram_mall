@@ -4,14 +4,15 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    isSelected:{
+      type:Boolean
+    }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-   isSelected:false,
    selectedPath:'/assets/cart/select_active.png',
    path:'/assets/cart/select.png'
   },
@@ -24,6 +25,7 @@ Component({
       this.setData({
         isSelected: !this.data.isSelected
       })
+      this.triggerEvent('parentSelected',{sonSlected:this.properties.isSelected},{})
     }
   }
 })

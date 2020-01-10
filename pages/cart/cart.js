@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cartList:[]
+    cartList:[],
+    isSelected:true,
+    isSelectedAll:true
   },
 
   /**
@@ -16,6 +18,9 @@ Page({
     this.setData({
       cartList:app.globalData.cartList
     })
+  },
+  itemCheckClick(e){
+    console.log(e)
   },
 
   /**

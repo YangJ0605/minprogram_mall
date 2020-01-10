@@ -8,9 +8,7 @@ import {
   ParamInfo
 } from '../../network/detail.js'
 
-import {
-    throttle
-} from '../../utils/util'
+
 const app = getApp()
 
 Page({
@@ -30,7 +28,8 @@ Page({
     scrollTop:'',
     test:'test',
     recommend:[],
-    isShowDetail:true
+    isShowDetail:true,
+    flag:true
   },
 
   /**
@@ -129,23 +128,31 @@ Page({
   },
   handleAddCart(){
     // console.log('加入成功')
+    //1秒中之内只能点击一次
+   if(this.data.flag){
+    this.data.flag = false
     const obj = {}
     obj.iid = this.data.iid
     obj.imageURL = this.data.swiperImages[0]
-    obj.title = this.data.shopInfo.title
-    obj.desc = this.data.shopInfo.desc
-    obj.price = this.data.shopInfo.realPrice
-
-    throttle(() => {
-      console.log('cc')
-      app.addToCart(obj)
-      wx.showToast({
+    obj.title = this.data.titlesInfo.title
+    obj.desc = this.data.titlesInfo.desc
+    obj.price = this.data.titlesInfo.realPrice
+    obj.name = this.data.shopInfo.name
+    console.log('cc')
+    // console.log(this.data.titlesInfo)
+    // console.log(obj)
+    app.addToCart(obj)
+    wx.showToast({
         title: '加入购物车成功',
         icon:'success',
-        duration:800
+        duration:800,
+        success:() => {
+          setTimeout(() => {
+            this.data.flag = true
+          },1000)
+        }
       })
-    },500)
-   
+   }
   },
   onReachBottom: function () {
     

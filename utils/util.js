@@ -14,21 +14,25 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-function throttle(fn,wait) {
-  var context,agrs
-  var previous = 0
-  return  function() {
-    var now = +new Date()
-    context =this
-    agrs = arguments
-    if(now - previous > wait) {
-      fn.apply(context, agrs)
-      previous = now
-    }
-  }
-}
+
+// function throttle(fn,wait) {
+//   var context,agrs
+//   var previous = 0
+//   return  function() {
+//     var now = +new Date()
+//     context =this
+//     agrs = arguments
+//     console.log(now, previous)
+//     if(now - previous > wait) {
+//       console.log(now, previous)
+//       fn.apply(context, agrs)
+//       previous = now
+//       console.log(previous)
+//     }
+//   }
+// }
+
 
 module.exports = {
-  formatTime: formatTime,
-  throttle:throttle
+  formatTime: formatTime
 }

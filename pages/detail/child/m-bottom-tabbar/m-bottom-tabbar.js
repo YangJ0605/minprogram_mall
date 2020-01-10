@@ -15,7 +15,7 @@ Component({
       kefu:{path:"/assets/bottom_bar/kefu.png",selectedPath:"/assets/bottom_bar/kefu_active.png",clicked:false,text:'客服'},
       dianpu:{path:'/assets/bottom_bar/dianpu.png',selectedPath:'/assets/bottom_bar/dianpu_active.png',clicked:false,text:'店铺'},
       shoucang:{path:'/assets/bottom_bar/shoucang.png',selectedPath:'/assets/bottom_bar/shoucang_active.png',clicked:false,text:'收藏'}
-    }
+    },
   },
 
   /**
@@ -32,6 +32,6 @@ Component({
     },
     addCart(){
       this.triggerEvent('addCart',{},{})
-    } 
+    }
   }
 })

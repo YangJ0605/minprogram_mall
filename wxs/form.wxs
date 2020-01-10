@@ -46,8 +46,6 @@ var dateFormat = function(timestamp,format){
   return format;
 }
 
-
-
 module.exports = {
   formScore:formScore,
   dateFormat: dateFormat
