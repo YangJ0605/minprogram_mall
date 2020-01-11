@@ -21,11 +21,5 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    toggleSelected(){
-      this.setData({
-        isSelected: !this.data.isSelected
-      })
-      this.triggerEvent('parentSelected',{sonSlected:this.properties.isSelected},{})
-    }
   }
 })

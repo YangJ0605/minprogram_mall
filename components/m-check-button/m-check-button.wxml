@@ -1,5 +1,5 @@
 <!--components/m-checkd-button/m-check-button.wxml-->
-<view class="m-check-button" bind:tap = 'toggleSelected'>
+<view class="m-check-button">
   <image src="{{isSelected ? selectedPath : path}}" class="image" mode="widthFix"></image>
   <view class="text">
     <slot>

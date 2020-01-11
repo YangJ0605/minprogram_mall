@@ -1,12 +1,13 @@
 <!--pages/cart/cart.wxml-->
+<wxs src='../../wxs/form.wxs' module='form' />
 <scroll-view class="m-cart" scroll-y>
   <view class="item">
     <block wx:for='{{cartList}}' wx:key='index'>
       <view class="item-list">
          <view class="item-icon">
-          <m-check-button isSelected='{{isSelected }}' 
+          <m-check-button isSelected='{{item.isSelected}}' 
           bind:tap="itemCheckClick"
-          data-iid="{{item.iid}}"/> 
+          data-index="{{index}}"/> 
         </view>
         <view class="item-image">
           <image src="{{item.imageURL}}" mode='aspectFill'></image>
@@ -29,12 +30,16 @@
   </view>
 </scroll-view> 
 <view class="bottom-bar">
-  <m-check-button isSelected = '{{isSelectedAll}}'><text>全选</text> </m-check-button>
+  <m-check-button isSelected = '{{form.checkAll(cartList)}}' 
+                  data-flag="{{form.checkAll(cartList)}}"
+                  bindtap="toggleCheckAll">
+                  <text>全选</text>
+                  </m-check-button>
   <view class="left">
     <text>合计:</text>
-    <text class="price">¥0.00</text>
+    <text class="price">¥{{form.allPrice(cartList)}}</text>
   </view>
   <view class="right">
-    <button size="mini" class="button">去结算(0)</button>
+    <button size="mini" class="button">去结算({{cartList.length}})</button>
   </view>
 </view>

@@ -7,8 +7,7 @@ Page({
    */
   data: {
     cartList:[],
-    isSelected:true,
-    isSelectedAll:true
+    isSelectedAll:''
   },
 
   /**
@@ -20,9 +19,30 @@ Page({
     })
   },
   itemCheckClick(e){
-    console.log(e)
+    // const product = this.data.cartList.find(item => e.currentTarget.dataset.iid === item.iid)
+    // this.data.cartList[index].isSelected = !this.data.cartList[index].isSelected
+    const index = e.currentTarget.dataset.index
+    const list = this.data.cartList
+    list[index].isSelected = !list[index].isSelected
+    this.setData({
+      cartList: list
+    })
   },
-
+  toggleCheckAll(e) {
+    const list = this.data.cartList
+    const flag = e.currentTarget.dataset.flag
+    if(flag){
+      list.forEach(item => item.isSelected = false)
+      this.setData({
+        cartList: list
+      })
+    }else {
+      list.forEach(item => item.isSelected = true)
+      this.setData({
+        cartList: list
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -34,7 +54,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      cartList:app.globalData.cartList
+    })
   },
 
   /**

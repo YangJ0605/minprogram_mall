@@ -46,8 +46,33 @@ var dateFormat = function(timestamp,format){
   return format;
 }
 
+var checkAll = function (cartList) {
+  var len = cartList.length
+  for(var i = 0; i<len;i++){
+    if(!cartList[i].isSelected){
+      // console.log('false')
+      return false
+    }
+  }
+  return true
+} 
+
+var allPrice = function (cartList){
+  var price = 0,len = cartList.length
+  for(var i = 0; i<cartList.length;i++){
+    if(cartList[i].isSelected){
+      price += cartList[i].count * cartList[i].price
+    }
+  }
+  return price
+}
+
+
+
 module.exports = {
   formScore:formScore,
-  dateFormat: dateFormat
+  dateFormat: dateFormat,
+  checkAll: checkAll,
+  allPrice: allPrice
 }
 

@@ -138,6 +138,7 @@ Page({
     obj.desc = this.data.titlesInfo.desc
     obj.price = this.data.titlesInfo.realPrice
     obj.name = this.data.shopInfo.name
+    obj.isSelected = true
     console.log('cc')
     // console.log(this.data.titlesInfo)
     // console.log(obj)
