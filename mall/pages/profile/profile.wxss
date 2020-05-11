@@ -1,0 +1,27 @@
+/* pages/profile/profile.wxss */
+.profile {
+  height: 100%;
+  /* background: #f8f8f8; */
+}
+.contact {
+  position: fixed;
+  right: 10rpx;
+  display: block;
+  top: 39%;
+  font-size: 32rpx;
+  color:rgba(52,144,248,1);
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: transparent;
+  background-image: url('https://6465-dev-demo-test-1301517211.tcb.qcloud.la/%E5%AE%A2%E6%9C%8D.png?sign=081398841a38ca9fda7ab55a6b845786&t=1584690647');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+}
+.contact::after {
+  border-color: transparent;
+}
+/* .contact image {
+  width: 88rpx;
+  height: 88rpx;
+} */

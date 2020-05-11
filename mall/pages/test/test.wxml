@@ -1,0 +1,5 @@
+<!--pages/test/test.wxml-->
+<text>pages/test/test.wxml</text>
+<button bindtap='pay'>支付</button>
+<button open-type="contact" bindcontact="handleContact">客服</button>
+<button open-type="getUserInfo" bindgetuserinfo="onLogin">登录</button>

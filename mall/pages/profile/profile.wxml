@@ -1,0 +1,10 @@
+<!--pages/profile/profile.wxml-->
+<view class='profile'>
+  <w-header/>
+  <w-info/>
+  <w-list-view infos="{{orderList}}"/>
+  <w-list-view infos="{{serviceList}}"/>
+  <button class="contact" open-type="contact" bindcontact="handleContact">
+    <!-- <image src="../../assets/profile/客服.png" mode="widthFix"></image> -->
+  </button>
+</view>

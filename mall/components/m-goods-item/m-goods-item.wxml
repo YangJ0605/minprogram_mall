@@ -1,0 +1,12 @@
+<!--components/m-goods-item/m-goods-item.wxml-->
+<view class="goods-item" bind:tap='goToDetail'>
+    <view class="image" style="background-image: url('{{item.img ||item.show.img}}')"></view>
+    <view class="desc-info ">
+        <view class="title">{{item.title}}</view>
+        <view class="info">
+            <text class='price'>¥{{item.price}}</text>
+            <text class="icon" style="background-image: url('https://6465-dev-demo-test-1301517211.tcb.qcloud.la/icon_shoucang.png?sign=2294acc34342da8972199ab743d42c45&t=1584347349')"></text>
+            <text class='cfav'>{{item.cfav}}</text>
+        </view>
+    </view>
+</view>

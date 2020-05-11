@@ -1,0 +1,19 @@
+<!--pages/profile/childCpns/w-header/w-header.wxml-->
+<view class='header'>
+  <view class='avatar'>
+    <image src="{{hasLogin ? avatarSrc : defaultSrc}}"/>
+  </view>
+  <view class='login-info'>
+    <button class='login' open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if='{{!hasLogin}}'>登录/注册</button>
+    <!-- <view class='phone'>
+      <image src="/assets/profile/phone.png"/>
+      暂无绑定手机号
+    </view> -->
+    <view class="nickname" wx:if='{{hasLogin}}'>
+      昵称: {{nickname}}
+    </view>
+  </view>
+  <!-- <view class='arrow'>
+    <image src="/assets/common/arrow-right.png"/>
+  </view> -->
+</view>
